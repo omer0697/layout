@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -6,10 +7,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ['Rubik', 'sans-serif'],
+    extend: {
+      colors: {
+        primary: process.env.PRIMARY_COLOR || 'blue',
+      },
     },
-    extend: {},
+    fontFamily: {
+      sans: [process.env.FONT_FAMILY || 'Rubik', 'sans-serif'],
+    },
   },
   plugins: [],
-}
+};
