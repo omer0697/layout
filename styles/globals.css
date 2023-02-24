@@ -9,3 +9,8 @@ html, body, #__next {
   width: 100%;
 
 }
+
+.myButtonHover:hover {
+  background-color: #127f3f;
+  color: white;
+}

@@ -13,6 +13,12 @@ import { useState } from 'react';
 
 const Layout = ({ children, pageTitle, pageDescription }) => {
     const [diologMenuOpen, setDiologMenuOpen] = useState(false);
+
+    const styleForButton = {
+        backgroundColor: '#3fb769',
+        color: 'white',
+      };
+
   return (
     <>
       <Head>
@@ -74,7 +80,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                 <div className="animate-bounce">
                     <CommonButton 
                         text="Teklif Al" 
-                        className="bg-green-500 hover:bg-green-700" 
+                        className="bg-green-600 hover:bg-green-500 text-white font-bold"
                         endIcon={<ErrorOutlineIcon />}
                         size="small"
                         onClick={() => setDiologMenuOpen(true)}    
@@ -85,7 +91,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
         <main className='container m-auto mt-4 mx-40'>
             {children}
             <div className='absolute bottom-20 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300'>
-                <WhatsAppIcon className='text-6xl mx-2 cursor-pointer ' onClick={() => window.open('https://wa.me/905354231662')}/>
+                <WhatsAppIcon className='text-5xl mx-2 cursor-pointer ' onClick={() => window.open('https://wa.me/905354231662')}/>
                 <p className='text-xs'>Hızlı Teklif Almak İçin Tıklayın</p>
             </div>
         </main>
