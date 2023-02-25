@@ -9,7 +9,7 @@ export function CommonButton({text, ...props }) {
   return (
     <Button
       variant="contained"
-      className="bg-green-600 hover:bg-green-500 text-white font-bold"
+      style={{ backgroundColor: '#2e7d32', color: 'white' }}
       {...props}
     >
       {text}
