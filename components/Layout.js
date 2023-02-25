@@ -82,6 +82,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                 <div className="animate-bounce">
                     <CommonButton 
                         text="Teklif Al" 
+                        className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-full"
                         endIcon={<ErrorOutlineIcon />}
                         size="small"
                         onClick={() => setDiologMenuOpen(true)}    
