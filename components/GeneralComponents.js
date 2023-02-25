@@ -65,11 +65,15 @@ export function DialogMenu({open,handleClose,children, ...props }) {
           <TextFieldForm
             label="E-Posta"
             value={formData.eposte}
+            error={formData.eposte !== '' && !validateEmail(formData.eposte)}
+            helperText={formData.eposte !== '' && !validateEmail(formData.eposte) ? 'Geçersiz E-Posta' : ''}
             setFunction={(value) => setFormData({ ...formData, eposte: value })}
           />
           <TextFieldForm
             label="Telefon"
             value={formData.telefon}
+            error={formData.telefon !== '' && !validatePhone(formData.telefon)}
+            helperText={formData.telefon !== '' && !validatePhone(formData.telefon) ? 'Geçersiz Telefon' : ''}
             setFunction={(value) => setFormData({ ...formData, telefon: value })}
           />
           <TextFieldForm
@@ -94,7 +98,7 @@ export function DialogMenu({open,handleClose,children, ...props }) {
             text="Gönder"
             color="success"
             sx={{backgroundColor: "#00b140"}}
-            disabled={formData.name === '' || formData.eposte === '' || formData.telefon === '' || formData.mesaj === '' || formData.onay === false}
+            disabled={formData.name === '' || formData.eposte === '' || formData.telefon === '' || formData.mesaj === '' || formData.onay === false || !validateEmail(formData.eposte) || !validatePhone(formData.telefon)}
             className='w-36 bg-green-600 hover:bg-green-400'
             onClick={() => {
               console.log(formData);
@@ -113,6 +117,16 @@ export function DialogMenu({open,handleClose,children, ...props }) {
       
     </Dialog>
   );
+}
+
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
+function validatePhone(phone) {
+  var re = /^\d{10,13}$/;
+  return re.test(phone);
 }
 
 export function CommonLink({href, children,  ...props}){
