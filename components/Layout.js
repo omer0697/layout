@@ -9,6 +9,31 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useState } from 'react';
+import { GoogleMap, LoadScript, MarkerF} from "@react-google-maps/api";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+const API_KEY="AIzaSyAVVH5sVXwi2-pZCPTbRwyRHOlGRusS4Rc";
+
+function handleMarkerClick(){
+    window.open('https://www.google.com/maps/dir/?api=1&destination=39.979286,32.741264')
+  }
+
+
+const containerStyle = {
+    width: "100%",
+    height: "100%",
+  };
+
+  const center = {
+    lat: 39.979286,
+    lng: 32.741264,
+  };
+
+  const position = {
+    lat: 39.979286,
+    lng: 32.741264,
+  };
+
 
 const LinkData = [
     {
@@ -94,15 +119,48 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
         <main className='container m-auto mt-4'>
             {children}
             <div 
-                className='cursor-pointer fixed z-20  bottom-20 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300' 
+                className='cursor-pointer fixed z-20  bottom-44 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300' 
                 onClick={() => window.open('https://wa.me/905354231662')}
             >
                 <WhatsAppIcon style={{fontSize:"42px"}}/>
                 <p className='text-xs'>Hızlı Teklif Almak İçin Tıklayın</p>
             </div>
         </main>
-        <footer className='flex justify-center border-t-2 border-gray-300 h-20'>
-            <p>&copy; 2023 My Website, Inc.</p>
+        <footer className='flex flex-col justify-center items-center border-t-2 border-gray-300 h-72 bg-black text-white'>
+            <div className='w-full h-full flex flex-row'>
+                <div className='w-full h-full basis-1/3 pr-4 border-l-2 border-white'>
+                    <LoadScript googleMapsApiKey={API_KEY}>
+                        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={17}>
+                            <MarkerF position={position} onClick={handleMarkerClick} title="Ankara Jenerratör" />
+                        </GoogleMap>
+                    </LoadScript>
+                </div>
+                <div className='basis-1/3 pt-10 pl-10'>
+                    <p className='text-2xl font-bold'>Ofisimiz</p>
+                    <div className='flex items-center gap-1 '>
+                        <LocationOnIcon className='text-base' />
+                        <p>Adres: 06530 Çankaya/Ankara</p>
+                    </div>
+               </div>
+                <div className='basis-1/3 pl-10 pt-8'>
+                    <p>Ankara Jeneratör</p>
+                    <div className='flex items-center gap-1 '>
+                        <AccessTimeIcon className='text-base' />
+                        <p>Mesai Saatleri: Pazartesi - Cumartesi 08:00 - 19:00</p>
+                    </div>
+                    <div className='flex items-center gap-1 cursor-pointer hover:text-green-500' onClick={onClickCallingPhone}>
+                        <PhoneIphoneIcon className='text-base' />
+                        <p>Telefon: 0535 423 16 62</p>
+                    </div>
+                    <div className='flex items-center gap-1 cursor-pointer hover:text-green-500' onClick={() => window.open('mailto:info@ankarajeneratör.com')}>
+                        <AttachEmailIcon className='text-base' />
+                        <p>E-Posta: info@ankarajeneratör.com</p>
+                    </div>
+                </div>
+            </div>
+            <div className='border-t-2 border-white w-full items-center justify-center text-center pb-3'>
+                <p>&copy; 2021 Ankara Jeneratör Tüm Hakları Saklıdır | <a href="https://www.ankarajenerator.com.tr">Ankara Jeneratör</a></p>
+            </div>
         </footer>
       </div>
     </>
