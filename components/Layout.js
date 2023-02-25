@@ -126,7 +126,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                 <p className='text-xs'>Hızlı Teklif Almak İçin Tıklayın</p>
             </div>
         </main>
-        <footer className='flex flex-col justify-center items-center border-t-2 border-gray-300 h-72 bg-black text-white'>
+        <footer className='flex flex-col justify-center items-center border-t-2 border-gray-300 h-72 bg-gray-900 text-white'>
             <div className='w-full h-full flex flex-row'>
                 <div className='w-full h-full basis-1/3 pr-4 border-l-2 border-white'>
                     <LoadScript googleMapsApiKey={API_KEY}>
@@ -139,7 +139,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                     <p className='text-2xl font-bold'>Ofisimiz</p>
                     <div className='flex items-center gap-1 '>
                         <LocationOnIcon className='text-base' />
-                        <p>Adres: 06530 Çankaya/Ankara</p>
+                        <p>Adres: 06530 Ostim/Ankara</p>
                     </div>
                </div>
                 <div className='basis-1/3 pl-10 pt-8'>
