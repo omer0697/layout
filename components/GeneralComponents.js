@@ -3,6 +3,7 @@ import {Dialog} from '@mui/material';
 import { useState } from 'react';
 import { TextField } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
+import Link from 'next/link';
 
 export function CommonButton({text, ...props }) {
   return (
@@ -102,6 +103,14 @@ export function DialogMenu({open,handleClose,children, ...props }) {
       
     </Dialog>
   );
+}
+
+export function CommonLink({href, children,  ...props}){
+  return (
+    <Link href={href} className="hover:text-green-500" {...props}>
+      {children}
+    </Link>
+  )
 }
 
 
