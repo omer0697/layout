@@ -89,9 +89,9 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                 </div>
             </nav>
         </header>
-        <main className='container m-auto mt-4 mx-40'>
+        <main className='container m-auto mt-4'>
             {children}
-            <div className='cursor-pointer absolute bottom-20 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300'>
+            <div className='cursor-pointer fixed z-20  bottom-20 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300'>
                 <WhatsAppIcon style={{fontSize:"42px"}} onClick={() => window.open('https://wa.me/905354231662')}/>
                 <p className='text-xs'>Hızlı Teklif Almak İçin Tıklayın</p>
             </div>

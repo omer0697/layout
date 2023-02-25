@@ -9,3 +9,16 @@ html, body, #__next {
   width: 100%;
 
 }
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.7s ease-out;
+}
