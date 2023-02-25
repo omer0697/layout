@@ -92,11 +92,20 @@ export function DialogMenu({open,handleClose,children, ...props }) {
           </div>
           <CommonButton
             text="Gönder"
+            color="success"
+            sx={{backgroundColor: "#00b140"}}
             disabled={formData.name === '' || formData.eposte === '' || formData.telefon === '' || formData.mesaj === '' || formData.onay === false}
             className='w-36 bg-green-600 hover:bg-green-400'
             onClick={() => {
               console.log(formData);
               handleClose();
+              setFormData({
+                name: '',
+                eposte: '',
+                telefon: '',
+                mesaj: '',
+                onay: true,
+              });
             }}
           />
         </div>
