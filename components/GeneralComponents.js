@@ -11,6 +11,7 @@ export function CommonButton({text, ...props }) {
     <LoadingButton
       variant="contained"
       {...props}
+      color="success"
     >
       {text}
     </LoadingButton>

@@ -82,9 +82,10 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                 <div className="animate-bounce">
                     <CommonButton 
                         text="Teklif Al" 
-                        className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-full"
                         endIcon={<ErrorOutlineIcon />}
                         size="small"
+                        color="success"
+                        style={{backgroundColor: "#00b140"}}
                         onClick={() => setDiologMenuOpen(true)}    
                     />
                 </div>
@@ -92,8 +93,11 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
         </header>
         <main className='container m-auto mt-4'>
             {children}
-            <div className='cursor-pointer fixed z-20  bottom-20 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300'>
-                <WhatsAppIcon style={{fontSize:"42px"}} onClick={() => window.open('https://wa.me/905354231662')}/>
+            <div 
+                className='cursor-pointer fixed z-20  bottom-20 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300' 
+                onClick={() => window.open('https://wa.me/905354231662')}
+            >
+                <WhatsAppIcon style={{fontSize:"42px"}}/>
                 <p className='text-xs'>Hızlı Teklif Almak İçin Tıklayın</p>
             </div>
         </main>
