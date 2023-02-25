@@ -4,16 +4,17 @@ import { useState } from 'react';
 import { TextField } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import Link from 'next/link';
+import { LoadingButton } from '@mui/lab';
 
 export function CommonButton({text, ...props }) {
   return (
-    <Button
+    <LoadingButton
       variant="contained"
-      style={{ backgroundColor: '#2e7d32', color: 'white' }}
+      className='bg-green-500 text-white hover:bg-green-600'
       {...props}
     >
       {text}
-    </Button>
+    </LoadingButton>
   );
 }
 
