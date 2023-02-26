@@ -70,8 +70,8 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
       </Head>
       <DialogMenu open={diologMenuOpen} handleClose={() => setDiologMenuOpen(false)}/>
       <div className='flex flex-col min-h-screen justify-between'>
-        <header className='border-b-2 bg-gray-100'>
-            <div className='absolute border-2 w-full flex justify-between px-10 h-10 items-center'>
+        <header className='border-b-2 bg-[#1d2226] text-white'>
+            <div className='absolute border-b-2 w-full flex justify-between px-10 h-10 items-center'>
                 <div className=' text-xs font-bold flex items-center p-[0.17rem] gap-5'>
                     <div className='flex items-center gap-1 pl-28 '>
                         <AccessTimeIcon className='text-base' />

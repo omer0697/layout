@@ -21,8 +21,8 @@ function about() {
                     <p className='text-center leading-relaxed'>Ankara jenerator olarak, müşteri tabanımız oldukça geniştir. Ev kullanıcılarından büyük ölçekli endüstriyel tesislere kadar, jeneratörlerimiz çeşitli sektörlere hitap ediyor. İşletmelerin sürekliliğini sağlamak için jeneratörlere ihtiyaç duyan herkes müşterilerimiz arasındadır.</p>
                     <p className='text-center leading-relaxed'>Ankara jenerator olarak, yüksek kaliteli jeneratörlerimiz ve müşteri hizmetlerimizle rakiplerimizden ayrılıyoruz. Jeneratörlerimizin dayanıklılığı, güvenilirliği ve verimliliği, müşterilerimizin ihtiyaçlarını karşılamak için tasarlanmıştır. Ayrıca, müşterilerimize özel ihtiyaçlarına uygun jeneratörler sunarak onların ihtiyaçlarını tam olarak karşılamaya çalışıyoruz.</p>
                 </div>
-                <div className='flex flex-col gap-2 mt-2 items-center'>
-                    <h2 className='text-3xl pb-40'>Ürün Hattı</h2>
+                <div className='flex flex-col gap-2 mt-2 items-center pb-10'>
+                    <h2 className='text-3xl pb-4'>Ürün Hattı</h2>
                     <p>
                     Ankara jenerator olarak, ev kullanımı için taşınabilir modellerden büyük ölçekli uygulamalar için endüstriyel jeneratörlere kadar geniş bir yelpazede jeneratörler sunuyoruz. Jeneratörlerimiz 1 kW ile 2500 kW arasında güç çıkışına sahip olup, dizel, benzinli ve doğal gazlı modellerde mevcuttur. Jeneratörlerimizin güvenilir, verimli ve kullanımı kolay olması için en son teknolojiyi kullanıyoruz.
                     </p>
