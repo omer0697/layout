@@ -5,6 +5,7 @@ import { TextField } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import Link from 'next/link';
 import { LoadingButton } from '@mui/lab';
+import emailjs from '@emailjs/browser';
 
 export function CommonButton({text, ...props }) {
   return (
@@ -43,6 +44,20 @@ export function DialogMenu({open,handleClose,children, ...props }) {
     mesaj: '',
     onay: true,
   });
+
+  function sendEmail() {
+    emailjs.send('service_mwt9p39', 'template_f1n62ap', {
+      from_name: formData.name,
+      reply_to: formData.eposte,
+      phone: formData.telefon,
+      message: formData.mesaj
+    }, 'PVOkLK4h9LsRC33Bh')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+  }
 
   return (
     <Dialog
