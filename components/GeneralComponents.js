@@ -5,6 +5,7 @@ import { TextField } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import Link from 'next/link';
 import { LoadingButton } from '@mui/lab';
+import emailjs from '@emailjs/browser';
 
 export function CommonButton({text, ...props }) {
   return (
@@ -43,6 +44,22 @@ export function DialogMenu({open,handleClose,children, ...props }) {
     mesaj: '',
     onay: true,
   });
+
+  function sendEmail() {
+    emailjs.send('service_mwt9p39', 'template_f1n62ap', {
+      from_name: formData.name,
+      reply_to: formData.eposte,
+      phone: formData.telefon,
+      message: formData.mesaj
+    }, 'PVOkLK4h9LsRC33Bh')
+    .then((result) => {
+        console.log(result.text);
+        alert('Mesajınız başarıyla gönderildi.');
+    }, (error) => {
+        console.log(error.text);
+        alert('Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyiniz.');
+    });
+  }
 
   return (
     <Dialog
@@ -101,7 +118,7 @@ export function DialogMenu({open,handleClose,children, ...props }) {
             disabled={formData.name === '' || formData.eposte === '' || formData.telefon === '' || formData.mesaj === '' || formData.onay === false || !validateEmail(formData.eposte) || !validatePhone(formData.telefon)}
             className='w-36 bg-green-600 hover:bg-green-400'
             onClick={() => {
-              console.log(formData);
+              sendEmail();
               handleClose();
               setFormData({
                 name: '',
@@ -112,6 +129,7 @@ export function DialogMenu({open,handleClose,children, ...props }) {
               });
             }}
           />
+
         </div>
       </div>
       
