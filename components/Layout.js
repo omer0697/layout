@@ -69,7 +69,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DialogMenu open={diologMenuOpen} handleClose={() => setDiologMenuOpen(false)}/>
-      <div className='flex flex-col min-h-screen justify-between'>
+      <div className='flex flex-col justify-between'>
         <header className='border-b-2 bg-[#1d2226] text-white'>
             <div className='absolute border-b-2 w-full flex justify-between px-10 h-10 items-center'>
                 <div className=' text-xs font-bold flex items-center p-[0.17rem] gap-5'>
@@ -116,7 +116,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                 </div>
             </nav>
         </header>
-        <main className='container m-auto mt-4'>
+        <main className='w-full h-full'>
             {children}
             <div 
                 className='cursor-pointer fixed z-20  bottom-44 right-14 flex flex-col items-center animate-bounce gap-2 text-green-500 hover:text-green-300' 
@@ -126,7 +126,7 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
                 <p className='text-xs'>Hızlı Teklif Almak İçin Tıklayın</p>
             </div>
         </main>
-        <footer className='flex flex-col justify-center items-center border-t-2 border-gray-300 h-72 bg-gray-900 text-white'>
+        <footer className=' flex flex-col items-center border-t-2 border-gray-300 h-72 bg-gray-900 text-white justify-end bottom-0 w-full'>
             <div className='w-full h-full flex flex-row'>
                 <div className='w-full h-full basis-1/3 pr-4 border-l-2 border-white'>
                     <LoadScript googleMapsApiKey={API_KEY}>
