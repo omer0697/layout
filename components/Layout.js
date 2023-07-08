@@ -18,7 +18,6 @@ function handleMarkerClick(){
     window.open('https://www.google.com/maps/dir/?api=1&destination=39.979286,32.741264')
   }
 
-
 const containerStyle = {
     width: "100%",
     height: "100%",
