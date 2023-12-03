@@ -64,9 +64,19 @@ const Layout = ({ children, pageTitle, pageDescription }) => {
   return (
     <>
       <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-50EHG23M10"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-50EHG23M10');
+            `,
+          }}
+        />
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <DialogMenu open={diologMenuOpen} handleClose={() => setDiologMenuOpen(false)}/>
       <div className='flex flex-col justify-between'>
